@@ -32,26 +32,21 @@ int main()
 	}
 	std::cout << "OpenGL Version " << GLVersion.major << "." << GLVersion.minor;
 
-	glfwSetKeyCallback(window,
-		[](GLFWwindow *window, int key, int scancode, int action, int mods)
-		{
+	glfwSetKeyCallback(
+		window, [](GLFWwindow *window, int key, int scancode, int action, int mods) {
 			// Keyboard Input
+			std::cout << " " << key << '\n';
 		});
-	glfwSetMouseButtonCallback(window,
-		[](GLFWwindow *window, int button, int action, int mods)
-		{
+	glfwSetMouseButtonCallback(
+		window, [](GLFWwindow *window, int button, int action, int mods) {
 			// Mouse Input
 		});
-	glfwSetScrollCallback(window,
-		[](GLFWwindow *window, double xoffset, double yoffset)
-		{
-			// Scroll Wheel Input
-		});
-	glfwSetCursorPosCallback(window,
-		[](GLFWwindow *window, double xpos, double ypos)
-		{
-			// Mouse Motion Input
-		});
+	glfwSetScrollCallback(window, [](GLFWwindow *window, double xoffset, double yoffset) {
+		// Scroll Wheel Input
+	});
+	glfwSetCursorPosCallback(window, [](GLFWwindow *window, double xpos, double ypos) {
+		// Mouse Motion Input
+	});
 
 	// Init here
 
@@ -61,7 +56,6 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		// Draw here
-
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}

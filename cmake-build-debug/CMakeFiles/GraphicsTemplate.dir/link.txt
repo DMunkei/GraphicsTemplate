@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\GraphicsTemplate.dir/objects.a
+C:\mingw64\bin\ar.exe cr CMakeFiles\GraphicsTemplate.dir/objects.a @CMakeFiles\GraphicsTemplate.dir\objects1.rsp
+C:\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\GraphicsTemplate.dir/objects.a -Wl,--no-whole-archive  -o GraphicsTemplate.exe -Wl,--out-implib,libGraphicsTemplate.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\GraphicsTemplate.dir\linklibs.rsp
