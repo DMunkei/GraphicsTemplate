@@ -40,9 +40,10 @@ int main()
 	glfwSetKeyCallback(window,
 		[](GLFWwindow *window, int key, int scancode, int action, int mods)
 		{
-			// Keyboard Input
 			std::cout << key << '\n';
-			
+
+			// Keyboard Input
+
 			if (key == GLFW_KEY_ESCAPE)
 			{
 				exit(0);
@@ -72,6 +73,7 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		// Draw here
+
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
