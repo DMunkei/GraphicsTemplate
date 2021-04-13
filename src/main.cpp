@@ -13,7 +13,7 @@ int main()
 
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_COMPAT_PROFILE);
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
 	GLFWwindow *window = glfwCreateWindow(1280, 720, "My App Title", nullptr, nullptr);
@@ -30,23 +30,39 @@ int main()
 		std::cerr << "Failed to initialize OpenGL context\n";
 		return -1;
 	}
-	std::cout << "OpenGL Version " << GLVersion.major << "." << GLVersion.minor;
 
-	glfwSetKeyCallback(
-		window, [](GLFWwindow *window, int key, int scancode, int action, int mods) {
+	int profileBit;
+	glGetIntegerv(GL_CONTEXT_PROFILE_MASK, &profileBit);
+
+	std::cout << "OpenGL Version " << GLVersion.major << "." << GLVersion.minor << " "
+			  << (profileBit == 1 ? "Core" : "Compatibility") << '\n';
+
+	glfwSetKeyCallback(window,
+		[](GLFWwindow *window, int key, int scancode, int action, int mods)
+		{
 			// Keyboard Input
-			std::cout << " " << key << '\n';
+			std::cout << key << '\n';
+			
+			if (key == GLFW_KEY_ESCAPE)
+			{
+				exit(0);
+			}
 		});
-	glfwSetMouseButtonCallback(
-		window, [](GLFWwindow *window, int button, int action, int mods) {
+	glfwSetMouseButtonCallback(window,
+		[](GLFWwindow *window, int button, int action, int mods)
+		{
 			// Mouse Input
 		});
-	glfwSetScrollCallback(window, [](GLFWwindow *window, double xoffset, double yoffset) {
-		// Scroll Wheel Input
-	});
-	glfwSetCursorPosCallback(window, [](GLFWwindow *window, double xpos, double ypos) {
-		// Mouse Motion Input
-	});
+	glfwSetScrollCallback(window,
+		[](GLFWwindow *window, double xoffset, double yoffset)
+		{
+			// Scroll Wheel Input
+		});
+	glfwSetCursorPosCallback(window,
+		[](GLFWwindow *window, double xpos, double ypos)
+		{
+			// Mouse Motion Input
+		});
 
 	// Init here
 
