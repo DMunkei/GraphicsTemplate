@@ -38,4 +38,4 @@ target_include_directories(GLAD PUBLIC libs/glad/include)
 
 add_executable(GraphicsTemplate src/main.cpp)
 target_include_directories(GraphicsTemplate PUBLIC src libs)
-target_link_libraries(GraphicsTemplate PUBLIC opengl32 glfw GLAD)
+target_link_libraries(GraphicsTemplate PUBLIC opengl32 glfw GLAD glm STB_IMAGE)
