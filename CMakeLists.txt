@@ -3,7 +3,7 @@
 # ------------------------
 
 cmake_minimum_required(VERSION 3.17.5)
-project(GraphicsTemplate C CXX)
+project(Task4 C CXX)
 
 # -----------------
 # COMPILER SETTINGS
@@ -36,6 +36,6 @@ target_include_directories(GLAD PUBLIC libs/glad/include)
 # PROJECT EXECUTABLE
 # ------------------
 
-add_executable(${PROJECT_NAME} src/main.cpp)
-target_include_directories(${PROJECT_NAME} PUBLIC src libs)
+add_executable(${PROJECT_NAME} src/main.cpp src/BaseGame.cpp src/Shader.cpp src/Buffer.cpp src/Renderer.cpp src/Window.cpp)
+target_include_directories(${PROJECT_NAME} PUBLIC src libs include)
 target_link_libraries(${PROJECT_NAME} PUBLIC opengl32 glfw GLAD glm STB_IMAGE)
