@@ -56,21 +56,21 @@ int main()
 				exit(0);
 			}
 		});
-	glfwSetMouseButtonCallback(window,
-		[](GLFWwindow *window, int button, int action, int mods)
-		{
-			// Mouse Input
-		});
-	glfwSetScrollCallback(window,
-		[](GLFWwindow *window, double xoffset, double yoffset)
-		{
-			// Scroll Wheel Input
-		});
-	glfwSetCursorPosCallback(window,
-		[](GLFWwindow *window, double xpos, double ypos)
-		{
-			// Mouse Motion Input
-		});
+//	glfwSetMouseButtonCallback(window,
+//		[](GLFWwindow *window, int button, int action, int mods)
+//		{
+//			// Mouse Input
+//		});
+//	glfwSetScrollCallback(window,
+//		[](GLFWwindow *window, double xoffset, double yoffset)
+//		{
+//			// Scroll Wheel Input
+//		});
+//	glfwSetCursorPosCallback(window,
+//		[](GLFWwindow *window, double xpos, double ypos)
+//		{
+//			// Mouse Motion Input
+//		});
 
 	// Init here
 
